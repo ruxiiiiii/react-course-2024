@@ -32,6 +32,18 @@ function CoreConcept(props) {
   );
 }
 
+// alternative props syntaxes
+function CoreConcept2({ image, title, description }) {
+  return (
+    <li>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </li>
+  );
+}
+
+
 function App() {
   return (
     <div>
