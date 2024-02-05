@@ -4,6 +4,13 @@ import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
+  //convention to write
+  //functions passed to "on" props
+  function handleSelect(selectedButton) {
+    //selectedButton => "components"/"jsx"/"props"/"state"
+    console.log(selectedButton);
+  }
+
   return (
     <div>
       <Header />
@@ -25,7 +32,12 @@ function App() {
         <section id="examples">
           <h2>Elements</h2>
           <menu>
-            <TabButton>Component</TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>
+              Component
+            </TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
         </section>
       </main>
